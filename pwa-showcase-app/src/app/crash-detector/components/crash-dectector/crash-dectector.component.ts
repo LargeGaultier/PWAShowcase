@@ -8,6 +8,9 @@ import { AutoIncidentSheetComponent } from '../auto-incident-sheet/auto-incident
   styleUrls: ['./crash-dectector.component.scss']
 })
 export class CrashDectectorComponent implements OnInit {
+  currentx;
+  currenty;
+  currentz;
   lastX;
   lastY;
   lastZ;
@@ -53,6 +56,10 @@ export class CrashDectectorComponent implements OnInit {
     if (!acc.x) {
       return;
     }
+
+    this.currentx = acc.x;
+    this.currenty = acc.y;
+    this.currentz = acc.z;
 
     if (Math.abs(acc.x) >= 1 && Math.abs(acc.y) >= 1 && Math.abs(acc.z) >= 1) {
       if (!this.lastX) {
